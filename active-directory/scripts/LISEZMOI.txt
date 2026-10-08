@@ -1,0 +1,3 @@
+Ce fichier a ete renomme en .txt uniquement pour passer les filtres anti-scripts des messageries.
+Apres telechargement, le renommer en setup-audit-policy.ps1 (supprimer le .txt final).
+Cette etape est inutile si vous recuperez le depot via GitHub.

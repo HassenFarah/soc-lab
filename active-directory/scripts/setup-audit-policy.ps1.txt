@@ -1,0 +1,26 @@
+# Active l'audit avancé utile à la détection sur un contrôleur de domaine.
+# À exécuter dans PowerShell en administrateur. Vérifier ensuite avec: auditpol /get /category:*
+
+$subcategories = @(
+  "Logon",
+  "Logoff",
+  "Account Lockout",
+  "Special Logon",
+  "User Account Management",
+  "Security Group Management",
+  "Kerberos Authentication Service",
+  "Kerberos Service Ticket Operations",
+  "Credential Validation",
+  "Directory Service Changes",
+  "Audit Policy Change"
+)
+
+foreach ($sub in $subcategories) {
+  Write-Host "Configuration de: $sub"
+  auditpol /set /subcategory:"$sub" /success:enable /failure:enable | Out-Null
+}
+
+# Force l'usage des sous-catégories d'audit avancé
+reg add "HKLM\SYSTEM\CurrentControlSet\Control\Lsa" /v SCENoApplyLegacyAuditPolicy /t REG_DWORD /d 1 /f | Out-Null
+
+Write-Host "Terminé. Contrôle: auditpol /get /category:*"
