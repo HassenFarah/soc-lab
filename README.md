@@ -27,6 +27,8 @@ Dépôt de documentation et de déploiement d'un **SOC de laboratoire** : collec
    │   Cortex   │◄────────────│   TheHive 5   │◄────────────────────►│  MISP  │
    │ analyzers  │  résultats  │ (cases/alerts)│     connecteur       │  TI    │
    └────────────┘────────────►└───────────────┘                      └────────┘
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/6227a512-a6f6-4154-9c89-911f5cc34dc0" />
+
 ```
 
 Réseau d'interconnexion : **Tailscale** (voir [`docs/NETWORK.md`](docs/NETWORK.md)).
