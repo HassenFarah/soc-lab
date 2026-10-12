@@ -8,6 +8,8 @@ Dépôt de documentation et de déploiement d'un **SOC de laboratoire** : collec
 
 ## 1. Architecture en un coup d'œil
 
+![Architecture du SOC Lab](assets\architecture-diagram.jpg)   
+
 ```
                     ┌───────────────────────────┐
                     │  Active Directory (WINDS) │  LAB.LOCAL
