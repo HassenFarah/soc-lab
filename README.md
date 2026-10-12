@@ -95,9 +95,6 @@ soc-lab/
 ## 6. 🎥 Vidéo de présentation
 
 Je présente ce projet de A à Z dans une vidéo YouTube : l'architecture, la mise en place, les tests de détection et les erreurs rencontrées en chemin.
-https://youtu.be/GX8pXbj7o98
-
-[![Regarder la vidéo sur YouTube]([https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg](https://youtu.be/GX8pXbj7o98))](https://www.youtube.com/watch?v=VIDEO_ID)
 
 ▶️ [Voir la vidéo sur YouTube](https://youtu.be/GX8pXbj7o98)
 
