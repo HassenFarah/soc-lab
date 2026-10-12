@@ -1,0 +1,32 @@
+services:
+  elasticsearch-cortex:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    container_name: cortex-elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms512m -Xmx512m
+    volumes:
+      - cortex-es-data:/usr/share/elasticsearch/data
+
+  cortex:
+    image: thehiveproject/cortex:${CORTEX_VERSION:-3.1.7}
+    container_name: cortex
+    restart: unless-stopped
+    depends_on:
+      - elasticsearch-cortex
+    ports:
+      - "9001:9001"
+    environment:
+      - es_uri=http://elasticsearch-cortex:9200
+      - job_directory=${CORTEX_JOB_DIR:-/tmp/cortex-jobs}
+      - docker_job_directory=${CORTEX_JOB_DIR:-/tmp/cortex-jobs}
+    volumes:
+      # Permet à Cortex de lancer les analyzers/responders comme conteneurs Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Le chemin doit être IDENTIQUE dans le conteneur et sur l'hôte
+      - ${CORTEX_JOB_DIR:-/tmp/cortex-jobs}:${CORTEX_JOB_DIR:-/tmp/cortex-jobs}
+
+volumes:
+  cortex-es-data:
