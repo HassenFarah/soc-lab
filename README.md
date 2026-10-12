@@ -90,6 +90,10 @@ soc-lab/
 - Ne jamais commiter de fichiers `.env`, de clés API ou de certificats (voir `.gitignore`).
 - Ce lab est prévu pour un usage pédagogique : ne pas l'exposer directement sur Internet.
 
-## 6. Équipe
+## 6. Équipe du projet
 
-.....
+* Hassen Farah
+  * Rôle : Ingénierie SOC / Intégration Wazuh & Active Directory
+
+* Nsiri Saber
+  * Rôle : Analyste SOC / Configuration MISP & TheHive
