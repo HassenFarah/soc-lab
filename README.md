@@ -92,10 +92,38 @@ soc-lab/
 - Ne jamais commiter de fichiers `.env`, de clés API ou de certificats (voir `.gitignore`).
 - Ce lab est prévu pour un usage pédagogique : ne pas l'exposer directement sur Internet.
 
-## 6. Équipe du projet
+## 6. 🎥 Vidéo de présentation
+
+Je présente ce projet de A à Z dans une vidéo YouTube : l'architecture, la mise en place, les tests de détection et les erreurs rencontrées en chemin.
+
+[![Regarder la vidéo sur YouTube]([([https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=VIDEO_ID](https://youtu.be/GX8pXbj7o98))](https://youtu.be/GX8pXbj7o98))
+
+▶️ [Voir la vidéo sur YouTube]([https://www.youtube.com/watch?v=VIDEO_ID](https://youtu.be/GX8pXbj7o98))
+
+### Ce que tu y trouveras
+
+- L'architecture du lab et les choix techniques
+- Le déploiement des composants (Active Directory, Wazuh, TheHive)
+- La simulation d'attaques et la détection des alertes
+- Les problèmes rencontrés et leurs solutions
+
+### Chapitres
+
+| Temps | Sujet |
+|-------|-------|
+| 00:00 | Introduction |
+| 00:00 | Architecture du lab |
+| 00:00 | Mise en place |
+| 00:00 | Simulation d'attaque et détection |
+| 00:00 | Erreurs et enseignements |
+| 00:00 | Conclusion |
+
+> 💬 Une question ou une suggestion ? Ouvre une [issue](../../issues) ou laisse un commentaire sous la vidéo.
+> 
+## 7. Équipe du projet
 
 * Hassen Farah
   * Rôle : Ingénierie SOC / Intégration Wazuh & Active Directory
 
 * Nsiri Saber
-  * Rôle : Analyste SOC / Configuration MISP & TheHive
+  * Rôle : Analyste SOC / Configuration MISP & TheHive & Cortex
