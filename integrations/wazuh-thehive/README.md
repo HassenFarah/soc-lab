@@ -66,3 +66,15 @@ Constaté dans ce lab : les alertes restent visibles dans Wazuh mais plus dans T
 5. **Niveau** : `<level>` inférieur ou égal au niveau des règles attendues.
 6. **Logs** : `integrations.log` et `ossec.log` donnent l'erreur exacte (HTTP 401/403 = clé/profil, connexion refusée = réseau/URL).
 7. **Dépendances Python** du script (module client TheHive) toujours installées dans le conteneur.
+## 2. TheHive ↔ Cortex
+
+Voir [`../../cortex/README.md`](../../cortex/README.md#5-connexion-à-thehive).
+Test validé dans le lab : analyzer **AbuseIPDB** exécuté depuis TheHive avec rapport de retour.
+
+## 3. TheHive ↔ MISP
+
+Voir [`../../misp/README.md`](../../misp/README.md#5-connexion-à-thehive).
+
+## Secrets
+
+Toutes les clés API sont stockées hors Git. Ne pas les mettre dans les README ni dans les captures d'écran.
