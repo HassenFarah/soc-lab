@@ -1,0 +1,56 @@
+services:
+  cassandra:
+    image: cassandra:4.0
+    container_name: thehive-cassandra
+    restart: unless-stopped
+    environment:
+      - CASSANDRA_CLUSTER_NAME=thehive
+      - MAX_HEAP_SIZE=1G
+      - HEAP_NEWSIZE=256M
+    volumes:
+      - cassandra-data:/var/lib/cassandra
+    healthcheck:
+      test: ["CMD-SHELL", "cqlsh -e 'describe keyspaces' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.9
+    container_name: thehive-elasticsearch
+    restart: unless-stopped
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+    volumes:
+      - elasticsearch-data:/usr/share/elasticsearch/data
+
+  thehive:
+    image: strangebee/thehive:${THEHIVE_VERSION:-5.2}
+    container_name: thehive
+    restart: unless-stopped
+    depends_on:
+      cassandra:
+        condition: service_healthy
+      elasticsearch:
+        condition: service_started
+    ports:
+      - "9000:9000"
+    command:
+      - --secret
+      - ${THEHIVE_SECRET}
+      - --cql-hostnames
+      - cassandra
+      - --index-backend
+      - elasticsearch
+      - --es-hostnames
+      - elasticsearch
+    volumes:
+      - thehive-data:/data/files
+
+volumes:
+  cassandra-data:
+  elasticsearch-data:
+  thehive-data:
