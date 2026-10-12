@@ -8,7 +8,7 @@ Dépôt de documentation et de déploiement d'un **SOC de laboratoire** : collec
 
 ## 1. Architecture en un coup d'œil
 
-![Architecture du SOC Lab](../assets/architecture-diagram.jpg)   
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/6227a512-a6f6-4154-9c89-911f5cc34dc0" />
 
 ```
                     ┌───────────────────────────┐
