@@ -1,0 +1,19 @@
+# Secrets et variables locales
+.env
+*.key
+*.pem
+*.p12
+secret.conf
+
+# Certificats générés (Wazuh)
+wazuh/**/config/wazuh_indexer_ssl_certs/
+
+# Données Docker locales
+data/
+*.log
+*.bak
+
+# Éditeurs / OS
+.vscode/
+.idea/
+.DS_Store
